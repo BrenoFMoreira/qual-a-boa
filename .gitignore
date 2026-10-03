@@ -1,0 +1,19 @@
+# .gitignore — lista do que o Git NÃO deve guardar nem enviar ao GitHub.
+# Cada linha é um padrão de nome de arquivo ou pasta. Linhas com "#" são comentários.
+
+# Dependências: bibliotecas baixadas pelo npm. São enormes e podem ser
+# baixadas de novo a qualquer momento com "npm install".
+node_modules/
+
+# Segredos: arquivos com chaves e senhas. NUNCA vão para o GitHub.
+# O "!" abre uma exceção: o .env.example (modelo sem valores reais) pode ir.
+.env
+.env.*
+!.env.example
+
+# Arquivos criados automaticamente pelo sistema operacional.
+.DS_Store
+Thumbs.db
+
+# Configurações pessoais do Claude Code (permissões desta máquina).
+.claude/settings.local.json
