@@ -1,16 +1,17 @@
 # PROGRESSO — Qual a Boa
 
 > Arquivo de controle do projeto. Deve ser lido no início de cada sessão e atualizado ao final de cada etapa.
-> Última atualização: 2026-09-30
+> Última atualização: 2026-10-02
 
 ---
 
 ## Status atual
 
-- **Fase:** Planejamento concluído (stack, MVP e regras de negócio aprovados em 2026-09-30)
-- **Em andamento:** Etapa 0 — Preparação do ambiente (arquivos criados; faltam verificação das ferramentas, `git init`, primeiro commit e envio ao GitHub)
+- **Fase:** Etapa 0 concluída em 2026-10-02
+- **Próxima etapa planejada:** Etapa 1 — Criar o app Expo e rodar no iPhone (aguardando autorização)
 - **Pasta do projeto:** `Documentos\Qual a Boa`
-- **Ambiente do usuário:** Windows 11; Node.js, Git e VS Code já instalados (versões ainda não verificadas); conta no GitHub; iPhone com Expo Go instalado
+- **Repositório:** https://github.com/BrenoFMoreira/qual-a-boa (público, branch `main`)
+- **Ambiente do usuário:** Windows 11 (usa o Prompt de Comando/cmd); Node.js v24.21.0; Git 2.56.0; VS Code; iPhone com Expo Go instalado
 
 ---
 
@@ -62,7 +63,7 @@ Alternativas consideradas: Flutter + Firebase; Kotlin/Swift nativos + backend pr
 
 | # | Etapa | Conceitos principais | Agentes/ferramentas | Status |
 |---|---|---|---|---|
-| 0 | Preparação do ambiente (Node, Git, VS Code, Expo Go, conta GitHub, repositório) | terminal, Git, dependências | — | ⏳ Pendente |
+| 0 | Preparação do ambiente (Node, Git, VS Code, Expo Go, conta GitHub, repositório) | terminal, Git, dependências | — | ✅ Concluída (2026-10-02) |
 | 1 | Criar o app Expo e rodar no celular; estrutura de pastas | projeto JS/TS, arquivos, componentes | Plan, revisão | ⏳ Pendente |
 | 2 | Navegação e telas com dados falsos (Feed, Local, Perfil) | componentes, props, estado, listas | Plan, testes, revisão | ⏳ Pendente |
 | 3 | Banco de dados: projeto Supabase, tabela de locais, seed | banco relacional, tabelas, SQL, migrações, RLS | Plan, segurança, revisão | ⏳ Pendente |
@@ -80,18 +81,18 @@ Alternativas consideradas: Flutter + Firebase; Kotlin/Swift nativos + backend pr
 ## Registro
 
 ### Etapas concluídas
-- Nenhuma ainda.
+- **Etapa 0 — Preparação do ambiente (2026-10-02):** ferramentas verificadas; Git configurado (nome e e-mail); repositório criado com `git init -b main`; arquivos `.gitignore`, `README.md`, `CLAUDE.md` e `PROGRESSO.md` criados; primeiro commit (`cf4f704`) enviado ao GitHub.
 
 ### Funcionalidades implementadas
 - Nenhuma ainda.
 
 ### Testes realizados e resultados
-- Nenhum ainda.
+- Etapa 0: `node --version` → v24.21.0 ✅; `git --version` → 2.56.0 ✅; `git push -u origin main` concluído e repositório conferido no navegador (4 arquivos e README renderizado) ✅.
 
 ### Conceitos já aprendidos
-- Nenhum registrado ainda.
+- **Etapa 0:** terminal e comandos (`cd`, aspas em caminhos com espaço); Git (repositório, `git init`, `git status`, `git add`, `git commit`, Conventional Commits); `.gitignore` e por que segredos não vão para o Git; GitHub (remote, `origin`, `git remote add/set-url/-v`, `git push -u`, diferença entre push e pull); ler mensagens de erro; diferença entre warning e error (avisos LF/CRLF são inofensivos).
 
 ### Problemas conhecidos / observações
 - Os agentes do ECC (planejamento, revisão, testes, segurança) **não foram encontrados** nesta sessão. Substitutos disponíveis: agente `Plan` (planejamento), `/code-review` (revisão), `/security-review` (segurança); testes serão escritos diretamente.
-- O projeto ainda está numa pasta temporária da sessão; precisa ser movido para uma pasta definitiva antes da Etapa 0.
 - Limitação conhecida (MVP): a localização vem do celular e pode ser falsificada por apps de GPS falso. Aceitável para portfólio; registrar no README.
+- Erros resolvidos na Etapa 0 (para referência): remote cadastrado com o link de exemplo (`SEU-USUARIO`), corrigido com `git remote set-url`; `Repository not found` porque o repositório ainda não tinha sido criado no site.
