@@ -32,7 +32,16 @@ qual-a-boa/
 
 ## Como rodar
 
-Instruções serão adicionadas na Etapa 1.
+Pré-requisitos: [Node.js](https://nodejs.org/) 20 ou superior e o app **Expo Go** no celular (SDK 57), logado na mesma conta Expo usada no computador.
+
+```bash
+cd mobile
+npm install
+npx expo login
+npx expo start
+```
+
+Escaneie o QR code com a câmera do iPhone (ou pelo Expo Go no Android). O computador e o celular precisam estar na mesma rede Wi-Fi.
 
 ## Progresso
 
