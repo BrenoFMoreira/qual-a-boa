@@ -1,13 +1,18 @@
-import { StatusBar } from "expo-status-bar";
+import { Link } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 
-export default function HomeScreen() {
+import { colors } from "@/constants/theme";
+
+export default function FeedScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Qual a Boa 🍻</Text>
       <Text style={styles.subtitle}>Descubra onde a noite está rolando em BH</Text>
       <Text style={styles.hint}>Em breve: Os rolês mais quentes da região</Text>
-      <StatusBar style="light" />
+      {/* Link temporário só para testar a navegação; sai na sub-etapa 2c */}
+      <Link href={{ pathname: "/venue/[id]", params: { id: "v1" } }} style={styles.link}>
+        Abrir local de teste →
+      </Link>
     </View>
   );
 }
@@ -17,24 +22,29 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#1a1033",
     padding: 24,
   },
   title: {
     fontSize: 36,
     fontWeight: "bold",
-    color: "#ffffff",
+    color: colors.text,
   },
   subtitle: {
     marginTop: 8,
     fontSize: 16,
-    color: "#c9b8ff",
+    color: colors.accent,
     textAlign: "center",
   },
   hint: {
     marginTop: 16,
     fontSize: 14,
-    color: "#10cf20",
+    color: colors.highlight,
     textAlign: "center",
+  },
+  link: {
+    marginTop: 32,
+    fontSize: 16,
+    color: colors.accent,
+    textDecorationLine: "underline",
   },
 });

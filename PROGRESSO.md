@@ -7,8 +7,9 @@
 
 ## Status atual
 
-- **Fase:** Etapa 1 concluída em 2026-10-18 (falta só o commit)
-- **Próxima etapa planejada:** Etapa 2 — Navegação e telas com dados falsos (aguardando autorização)
+- **Fase:** Etapa 2 em andamento. Sub-etapa **2a (navegação)** implementada e testada no iPhone em 2026-10-18, **ainda sem commit**.
+- **Ao retomar:** 1) praticar o ciclo do Git com o [guia](docs/guia-git.md) fazendo o commit da 2a (`feat(mobile): adiciona navegação com abas e tela de local`); 2) seguir para a 2b (tipos, dados mock, regras e Jest).
+- **Sub-etapas da Etapa 2:** 2a navegação (abas JS `expo-router/js-tabs` + Stack + `venue/[id]`) ✅ · 2b tipos, mocks, lógica pura (`lib/`), services e Jest ⏳ · 2c feed com FlatList e VenueCard ⏳ · 2d tela do local e perfil ⏳
 - **Pasta do projeto:** `Documentos\Qual a Boa`
 - **Repositório:** https://github.com/BrenoFMoreira/qual-a-boa (público, branch `main`)
 - **Ambiente do usuário:** Windows 11 (usa o Prompt de Comando/cmd); Node.js v24.21.0; Git 2.56.0; VS Code; iPhone com Expo Go (SDK 57) e login na conta Expo; terminal do VS Code (PowerShell)
@@ -65,7 +66,7 @@ Alternativas consideradas: Flutter + Firebase; Kotlin/Swift nativos + backend pr
 |---|---|---|---|---|
 | 0 | Preparação do ambiente (Node, Git, VS Code, Expo Go, conta GitHub, repositório) | terminal, Git, dependências | — | ✅ Concluída (2026-10-02) |
 | 1 | Criar o app Expo e rodar no celular; estrutura de pastas | projeto JS/TS, arquivos, componentes | Plan, revisão | ✅ Concluída (2026-10-18) |
-| 2 | Navegação e telas com dados falsos (Feed, Local, Perfil) | componentes, props, estado, listas | Plan, testes, revisão | ⏳ Pendente |
+| 2 | Navegação e telas com dados falsos (Feed, Local, Perfil) | componentes, props, estado, listas | Plan, testes, revisão | 🔄 Em andamento (2a feita) |
 | 3 | Banco de dados: projeto Supabase, tabela de locais, seed | banco relacional, tabelas, SQL, migrações, RLS | Plan, segurança, revisão | ⏳ Pendente |
 | 4 | Conectar o app ao banco: listar locais reais | API, HTTP, requisição, async/await, variáveis de ambiente | Plan, testes, revisão | ⏳ Pendente |
 | 5 | Cadastro, login e perfil | autenticação, sessão, tokens, RLS por usuário | Plan, segurança, testes, revisão | ⏳ Pendente |
@@ -103,3 +104,6 @@ Alternativas consideradas: Flutter + Firebase; Kotlin/Swift nativos + backend pr
 - ⚠️ Atualização futura: quando o Expo Go da App Store passar para o SDK 58, o projeto (SDK 57) deixará de abrir no iPhone. Correção: `npx expo install expo@^58.0.0 --fix` e `npx expo-doctor@latest` (ler as mudanças do SDK 58 antes).
 - Imagens de exemplo do template (react-logo, tabIcons, tutorial-web etc.) continuam em `mobile/assets/`; serão substituídas pela identidade visual na Etapa 11.
 - Lição: não rodar `npm audit fix --force` em projeto Expo (troca versões compatíveis à força).
+- Etapa 2a: `npx tsc --noEmit` pegou um link com rota tipada no formato errado (`href="/venue/v1"`); corrigido para `href={{ pathname: "/venue/[id]", params: { id: "v1" } }}`. Lição: funcionar no celular ≠ estar correto.
+- Etapa 2a: `npx expo start` rodado na raiz deu `ConfigError ... package.json does not exist` (e ofereceu baixar o Expo 58). Comandos `npx expo`/`npm` rodam dentro de `mobile/`; comandos `git`, na raiz.
+- Ponto de atenção do aprendizado: o usuário tem dificuldade com os comandos `git add`, `commit` e `push` (o `status` está tranquilo). Foi criado o `docs/guia-git.md`; praticar no início das próximas sessões.
