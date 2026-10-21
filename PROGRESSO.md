@@ -1,15 +1,15 @@
 # PROGRESSO — Qual a Boa
 
 > Arquivo de controle do projeto. Deve ser lido no início de cada sessão e atualizado ao final de cada etapa.
-> Última atualização: 2026-10-18
+> Última atualização: 2026-10-20
 
 ---
 
 ## Status atual
 
-- **Fase:** Etapa 2 em andamento. Sub-etapa **2a (navegação)** implementada e testada no iPhone em 2026-10-18, **ainda sem commit**.
-- **Ao retomar:** 1) praticar o ciclo do Git com o [guia](docs/guia-git.md) fazendo o commit da 2a (`feat(mobile): adiciona navegação com abas e tela de local`); 2) seguir para a 2b (tipos, dados mock, regras e Jest).
-- **Sub-etapas da Etapa 2:** 2a navegação (abas JS `expo-router/js-tabs` + Stack + `venue/[id]`) ✅ · 2b tipos, mocks, lógica pura (`lib/`), services e Jest ⏳ · 2c feed com FlatList e VenueCard ⏳ · 2d tela do local e perfil ⏳
+- **Fase:** Etapa 2 em andamento. 2a (navegação) concluída e enviada ao GitHub (`e2dfd84`, commit feito pelo usuário). 2b **iniciada**: ferramentas de teste instaladas, **ainda sem commit e sem arquivos de código**.
+- **Ao retomar:** 1) commit das dependências de teste (`chore(mobile): instala Jest e React Native Testing Library`) feito pelo usuário; 2) continuar a 2b: config do Jest no `package.json` (`"test": "jest"` + preset `jest-expo` + `moduleNameMapper` para `@/`), tipos (`src/types/models.ts`), constantes (`rules.ts`, `labels.ts`), lógica pura (`src/lib/posts.ts`, `ranking.ts`, `format.ts`), mocks (`src/data/`), services (`src/services/`) e testes em `mobile/__tests__/`. O plano completo com o conteúdo dos arquivos foi gerado pelo agente Plan em 2026-10-18.
+- **Sub-etapas da Etapa 2:** 2a navegação ✅ · 2b tipos, mocks, lógica pura, services e Jest 🔄 (dependências instaladas) · 2c feed com FlatList e VenueCard ⏳ · 2d tela do local e perfil ⏳
 - **Pasta do projeto:** `Documentos\Qual a Boa`
 - **Repositório:** https://github.com/BrenoFMoreira/qual-a-boa (público, branch `main`)
 - **Ambiente do usuário:** Windows 11 (usa o Prompt de Comando/cmd); Node.js v24.21.0; Git 2.56.0; VS Code; iPhone com Expo Go (SDK 57) e login na conta Expo; terminal do VS Code (PowerShell)
@@ -66,7 +66,7 @@ Alternativas consideradas: Flutter + Firebase; Kotlin/Swift nativos + backend pr
 |---|---|---|---|---|
 | 0 | Preparação do ambiente (Node, Git, VS Code, Expo Go, conta GitHub, repositório) | terminal, Git, dependências | — | ✅ Concluída (2026-10-02) |
 | 1 | Criar o app Expo e rodar no celular; estrutura de pastas | projeto JS/TS, arquivos, componentes | Plan, revisão | ✅ Concluída (2026-10-18) |
-| 2 | Navegação e telas com dados falsos (Feed, Local, Perfil) | componentes, props, estado, listas | Plan, testes, revisão | 🔄 Em andamento (2a feita) |
+| 2 | Navegação e telas com dados falsos (Feed, Local, Perfil) | componentes, props, estado, listas | Plan, testes, revisão | 🔄 Em andamento (2a feita, 2b iniciada) |
 | 3 | Banco de dados: projeto Supabase, tabela de locais, seed | banco relacional, tabelas, SQL, migrações, RLS | Plan, segurança, revisão | ⏳ Pendente |
 | 4 | Conectar o app ao banco: listar locais reais | API, HTTP, requisição, async/await, variáveis de ambiente | Plan, testes, revisão | ⏳ Pendente |
 | 5 | Cadastro, login e perfil | autenticação, sessão, tokens, RLS por usuário | Plan, segurança, testes, revisão | ⏳ Pendente |
@@ -94,6 +94,7 @@ Alternativas consideradas: Flutter + Firebase; Kotlin/Swift nativos + backend pr
 
 ### Conceitos já aprendidos
 - **Etapa 0:** terminal e comandos (`cd`, aspas em caminhos com espaço); Git (repositório, `git init`, `git status`, `git add`, `git commit`, Conventional Commits); `.gitignore` e por que segredos não vão para o Git; GitHub (remote, `origin`, `git remote add/set-url/-v`, `git push -u`, diferença entre push e pull); ler mensagens de erro; diferença entre warning e error (avisos LF/CRLF são inofensivos).
+- **Etapa 2a/2b (parcial):** grupos de rotas `(tabs)`, rotas dinâmicas `[id]`, layouts aninhados (Stack + Tabs), `useLocalSearchParams`, Fragment `<>`, constantes compartilhadas (`theme.ts`), rotas tipadas; npm (`install`, `--save-dev`, dependencies × devDependencies), escopos `@familia/pacote`, versionamento semântico (`^`, `~`, versão exata), erro 404; `git mv`.
 - **Etapa 1:** npx; create-expo-app e templates; SDK e compatibilidade com o Expo Go; dependências (`package.json`, `package-lock.json`, `node_modules`); por que não rodar `npm audit fix --force`; scripts do npm (`npm run`); Metro e Fast Refresh; reload (`r`) e `--clear`; estrutura de um componente (import, função, return com JSX, StyleSheet); `View`, `Text`, `StatusBar`; cores hexadecimais; expo-router (arquivo = tela) e `Stack`; diferença entre menu do editor e comando do terminal; `tsc --noEmit` e `expo-doctor`.
 
 ### Problemas conhecidos / observações
@@ -107,3 +108,6 @@ Alternativas consideradas: Flutter + Firebase; Kotlin/Swift nativos + backend pr
 - Etapa 2a: `npx tsc --noEmit` pegou um link com rota tipada no formato errado (`href="/venue/v1"`); corrigido para `href={{ pathname: "/venue/[id]", params: { id: "v1" } }}`. Lição: funcionar no celular ≠ estar correto.
 - Etapa 2a: `npx expo start` rodado na raiz deu `ConfigError ... package.json does not exist` (e ofereceu baixar o Expo 58). Comandos `npx expo`/`npm` rodam dentro de `mobile/`; comandos `git`, na raiz.
 - Ponto de atenção do aprendizado: o usuário tem dificuldade com os comandos `git add`, `commit` e `push` (o `status` está tranquilo). Foi criado o `docs/guia-git.md`; praticar no início das próximas sessões.
+- Etapa 2b (instalação de testes): `npx expo install ... "--" --dev` colocou `jest`/`jest-expo`/`@types/jest` em `dependencies` (o `npx expo install` grava pacotes do SDK sempre em `dependencies` e o `--dev` está obsoleto no npm). Corrigido movendo os 3 para `devDependencies` no `package.json` + `npm install`. Lição: para jogar em devDependencies, editar o package.json ou usar `npm install --save-dev` direto (para pacotes fora do SDK).
+- Versões de teste instaladas: jest 29.7.0, jest-expo ~57.0.6, @types/jest 29.5.14, @testing-library/react-native ^14.1.0, test-renderer ~1.2.0 (travado: 1.3 exige React 19.3; o projeto usa 19.2.3).
+- `npm audit --omit=dev` mostra 61 vulnerabilidades (antes da correção: 65). Não caiu mais porque o `expo-router` declara a `@testing-library/react-native` como dependência opcional (peer), então o npm conta as ferramentas de teste como parte do app. São ferramentas de desenvolvimento; não rodar `npm audit fix --force`. Reavaliar na atualização para o SDK 58.
