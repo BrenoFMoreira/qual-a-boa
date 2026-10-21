@@ -8,7 +8,7 @@
 ## Status atual
 
 - **Fase:** Etapa 2 em andamento. 2a (navegação) concluída e enviada ao GitHub (`e2dfd84`, commit feito pelo usuário). 2b **iniciada**: ferramentas de teste instaladas, **ainda sem commit e sem arquivos de código**.
-- **Ao retomar:** 1) commit das dependências de teste (`chore(mobile): instala Jest e React Native Testing Library`) feito pelo usuário; 2) continuar a 2b: config do Jest no `package.json` (`"test": "jest"` + preset `jest-expo` + `moduleNameMapper` para `@/`), tipos (`src/types/models.ts`), constantes (`rules.ts`, `labels.ts`), lógica pura (`src/lib/posts.ts`, `ranking.ts`, `format.ts`), mocks (`src/data/`), services (`src/services/`) e testes em `mobile/__tests__/`. O plano completo com o conteúdo dos arquivos foi gerado pelo agente Plan em 2026-10-18.
+- **Ao retomar:** 1) commit das dependências de teste (`chore(mobile): instala Jest e React Native Testing Library`) feito pelo usuário; 2) continuar a 2b: config do Jest no `package.json` (`"test": "jest"` + preset `jest-expo` + `moduleNameMapper` para `@/`), tipos (`src/types/models.ts`), constantes (`rules.ts`, `labels.ts`), lógica pura (`src/lib/posts.ts`, `ranking.ts`, `format.ts`), mocks (`src/data/`), services (`src/services/`) e testes em `mobile/__tests__/`. O plano completo, com o conteúdo de todos os arquivos, está em `docs/plano-etapa-2.md`.
 - **Sub-etapas da Etapa 2:** 2a navegação ✅ · 2b tipos, mocks, lógica pura, services e Jest 🔄 (dependências instaladas) · 2c feed com FlatList e VenueCard ⏳ · 2d tela do local e perfil ⏳
 - **Pasta do projeto:** `Documentos\Qual a Boa`
 - **Repositório:** https://github.com/BrenoFMoreira/qual-a-boa (público, branch `main`)
